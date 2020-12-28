@@ -12,7 +12,7 @@ const merSort = (nums) => {
     const res = []
     while (leftSort.length || rightSort.length) {
       if (leftSort.length && rightSort.length) {
-        res.push(leftSort[0] < rightSort[0] ? leftSort.shift() : rightSort.shift())
+        res.push(leftSort[0] <= rightSort[0] ? leftSort.shift() : rightSort.shift())
       } else if (leftSort.length) {
         res.push(leftSort.shift())
       } else if (rightSort.length) {
