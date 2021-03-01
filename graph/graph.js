@@ -36,3 +36,13 @@ const bfs = (n) => {
   }
 }
 bfs(2)
+
+
+let vdom = {
+  tag: 'div',
+  props: {
+    class: 'container'
+  },
+  children: [{ tag: 'p', children: 'vdom' },
+  { tag: 'ul', props: { style: 'font-size:20px' }, children: [{ tag: 'li', children: 'a' }] }]
+}

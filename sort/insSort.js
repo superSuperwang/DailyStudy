@@ -1,3 +1,5 @@
+/**将数组第一个数作为有序，后面的数依次与前面已排好的数比较 */
+
 const insSort = (nums) => {
   for (let i = 1; i < nums.length; i++) {
     const now = nums[i]

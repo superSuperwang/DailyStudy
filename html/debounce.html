@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="btn"></input>
+  <script>
+    // 防抖思想:将多次高频操作优化为只在最后一次执行
+    const btn = document.getElementById('btn')
+    let delay = 1000
+    let timer = null
+    btn.addEventListener('input', (event) => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        console.log(event.target.value)
+        timer = null
+      }, delay)
+    });
+  </script>
+</body>
+
+</html>
