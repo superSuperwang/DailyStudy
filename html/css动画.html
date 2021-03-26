@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>观察will-change</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+      background-color: greenyellow;
+    }
+
+    .box1 {
+      will-change: left;
+      position: relative;
+      height: 100px;
+      width: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="controls">
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </div>
+  <div class="box">单独的一层</div>
+  <div class="box1">测试提升为合成层的性能</div>
+  <script>
+
+    let boxes = document.querySelector('.box');
+    let boxe1 = document.querySelector('.box1');
+    let start = document.querySelector('#start');
+    start.addEventListener('click', function () {
+      //Layout未dirty 访问domA.offsetWidth不会Force Layout
+      boxes.style.width = (boxes.offsetWidth + 1) + 'px'
+      //Layout已经dirty， Force Layout
+      // boxe1.style.width = (boxe1.offsetWidth + 1) + 'px'
+    })
+
+  </script>
+</body>
+
+
+</html>

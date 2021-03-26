@@ -15,9 +15,24 @@
   <script>
     // 防抖思想:将多次高频操作优化为只在最后一次执行
     const btn = document.getElementById('btn')
-    let delay = 1000
+    let delay = 2000
+    let last = 0
     let timer = null
     btn.addEventListener('input', (event) => {
+      // 结合节流，避免用户长时间得不到反馈
+      // let now = +new Date()
+      // if (now - last < delay) {
+      //   if (timer) {
+      //     clearTimeout(timer)
+      //   }
+      //   timer = setTimeout(() => {
+      //     console.log(event.target.value)
+      //     timer = null
+      //   }, delay)
+      // } else {
+      //   last = now
+      //   console.log(event.target.value)
+      // }
       if (timer) {
         clearTimeout(timer)
       }
